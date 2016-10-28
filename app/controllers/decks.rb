@@ -1,7 +1,7 @@
 #all decks
 get '/decks' do
   @decks = Deck.all
-  erb :'/'
+  erb :index
 end
 # new deck entry form
 get '/decks/new' do
@@ -18,19 +18,21 @@ post '/decks' do
   end
 end
 
-get '/decks/:subject' do
+get '/decks/:id' do
 #get '/show-one-entry/:subject' do
-  @deck = Deck.find(params[:subject])
+  @deck_id = params[:id]
+  @cards = Card.where(deck_id: @deck_id)
+  @deck = Deck.find(params[:id])
   erb :'decks/show'
 end
 #edit deck entry
-get '/decks/:subject/edit' do
-  @deck = Deck.find(params[:subject])
+get '/decks/:id/edit' do
+  @card = Card.find(params[:id])
   erb :'decks/edit'
 end
 
 #update
-put '/entries/:subject' do
+put '/deck/:subject' do
   deck = Deck.find(params[:subject])
   deck.update_attributes(params[:deck])
   redirect "/decks/:subject"
