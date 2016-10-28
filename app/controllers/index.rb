@@ -8,5 +8,5 @@ before '/*' do
 end
 
 get '/' do
-  erb :index
+  redirect '/decks'
 end
