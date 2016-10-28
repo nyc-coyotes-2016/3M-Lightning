@@ -15,7 +15,7 @@ post '/sessions' do
 end
 
 
-delete '/sessions' do
+delete '/' do
   session.clear
   redirect '/'
 end

@@ -12,7 +12,7 @@ body {
 }
 
 a {
-  color: #32bb7d;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -49,7 +49,7 @@ input[type=text], input[type=password], textarea {
 
 
 /* formatting */
-.bg-dk-green {
+.bg-dk-black {
   background-color: #05724f;
 }
 
