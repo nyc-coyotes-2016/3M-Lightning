@@ -3,12 +3,12 @@ get '/users' do
   erb :index
 end
 
-get'/users/new' do
+get '/users/new' do
   erb :'users/new'
 end
 
 post '/users' do
-  new_user = User.new(params[:users])
+  new_user = User.new(params[:user])
   if new_user.valid?
     new_user.save
     redirect '/'
