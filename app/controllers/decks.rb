@@ -28,10 +28,10 @@ get '/decks/:subject/edit' do
   @deck = Deck.find(params[:subject])
   erb :'decks/edit'
 end
+
 #update
 put '/entries/:subject' do
   deck = Deck.find(params[:subject])
   deck.update_attributes(params[:deck])
   redirect "/decks/:subject"
 end
-

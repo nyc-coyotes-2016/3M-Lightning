@@ -3,17 +3,17 @@ require_relative "../spec_helper"
 describe User do
   describe 'associations' do
     before(:each) do
+      @marissa = User.create!(user_name: "mtraina", password_digest: "devbootcamp")
+
       @colors_deck = Deck.create!(subject: "Colors", user_id: @marissa.id)
       @animals_deck = Deck.create!(subject: "Animals", user_id: @marissa.id)
 
       @card1 = Card.create!(question: "What color is the sky?", answer: "Blue", deck_id: @colors_deck.id)
       @card2 = Card.create!(question: "What color is spinach?", answer: "Green", deck_id: @colors_deck.id)
 
-      @marissa = User.create!(user_name: "mtraina", password_digest: "devbootcamp")
-
       @round1 = Round.create!(user_id: @marissa.id, deck_id: @colors_deck.id)
-      @guess1 = Guess.create!(round_id: @round1.id, deck_id: @card1.id, correct: "false")
-      @guess2 = Guess.create!(round_id: @round1.id, deck_id: @card1.id, correct: "true")
+      @guess1 = Guess.create!(round_id: @round1.id, card_id: @card1.id, correct: "false")
+      @guess2 = Guess.create!(round_id: @round1.id, card_id: @card1.id, correct: "true")
 
       @round2 = Round.create!(user_id: @marissa.id, deck_id: @animals_deck.id)
     end
