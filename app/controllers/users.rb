@@ -11,8 +11,7 @@ post '/users' do
   new_user = User.new(params[:users])
   if new_user.valid?
     new_user.save
-    redirect ''  #sessions redirect!!!!!!!!!!!!!!
-
+    redirect '/'
   else
     erb :'/users/new'
   end
