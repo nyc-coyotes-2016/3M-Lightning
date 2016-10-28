@@ -1,1 +1,9 @@
-edit form for decks
+<main class="form-wrapper" role="main">
+  <form method="post" action= "/decks/<%= @card.subject %>/edit">
+     <label for="new_question_input">Question:</label>
+    <input id="new_question_input" name="card[question]" type="text" value="<%= @cards.try(:question) %>">
+
+
+    <input type="submit" value="Update decks" class="button">
+  </form>
+</main>

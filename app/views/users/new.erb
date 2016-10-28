@@ -1,3 +1,4 @@
+
 <h1>Create Flashcard account</h1>
 
 <% if @errors %>
@@ -16,3 +17,19 @@
   <p><input type='password' name='user[password]' tabindex="1"</p>
   <p><input type='submit' value='Create Account'</p>
 </form>
+
+<h1>NEW DECK</h1>
+
+<main class="form-wrapper" role="main">
+
+   <form method="post" action="/decks/new">
+    <label for="user_deck_input">Post name:</label>
+    <input id="user_deck_input" name="user[user_name]" type="text" value="<%= @user.try(:user_name) %>">
+
+    <label for="user_body_input">pass:</label>
+    <input id="user_body_input" name="article[body]" type="text" value="<%= @article.try(:body) %>">
+
+    <input type="submit" value="Make my post homie!" class="button">
+  </form>
+</main>
+>>>>>>> add some functionality to edit and show pages
