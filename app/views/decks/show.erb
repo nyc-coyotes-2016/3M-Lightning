@@ -1,1 +1,13 @@
 show singular deck with all questions
+
+<h1>Deck Details</h1>
+
+
+<div class="container">
+
+    <ul>
+      <%@cards.each do |card| %>
+      <li><a href="/decks/<%= card.id %>/edit"><%= card.question %></a></li>
+      <% end %>
+    </ul>
+  </div>

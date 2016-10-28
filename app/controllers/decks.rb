@@ -1,7 +1,7 @@
 #all decks
 get '/decks' do
-  @decks = Deck.order(:created_at)
-  erb :'/decks'
+  @decks = Deck.all
+  erb :'/'
 end
 # new deck entry form
 get '/decks/new' do
@@ -12,7 +12,7 @@ post '/decks' do
   new_decks = User.new(params[:decks])
   if new_decks.valid?
     new_decks.save
-    redirect ''#sessions redirect!!!!!!!!!!!!!!
+    redirect 'decks/new'#sessions redirect!!!!!!!!!!!!!!
   else
     erb :'/decks/new'
   end

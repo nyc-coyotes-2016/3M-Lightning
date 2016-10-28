@@ -3,3 +3,13 @@
 <h2>Flashcard Decks</h2>
 
 <h1>list decks with links to show singular deck</h1>
+
+
+<div class="container">
+
+    <ul>
+      <% @decks.each do |deck| %>
+      <li><a href="/decks/<% deck.subject %>"><%= deck.subject %></a></li>
+      <% end %>
+    </ul>
+  </div>
