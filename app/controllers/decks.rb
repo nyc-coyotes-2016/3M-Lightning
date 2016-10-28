@@ -34,4 +34,3 @@ put '/entries/:subject' do
   deck.update_attributes(params[:deck])
   redirect "/decks/:subject"
 end
-
