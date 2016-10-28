@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative "../spec_helper"
 
 describe User do
   describe 'associations' do
@@ -16,7 +16,7 @@ describe User do
       @guess2 = Guess.create!(round_id: @round1.id, deck_id: @card1.id, correct: "true")
 
       @round2 = Round.create!(user_id: @marissa.id, deck_id: @animals_deck.id)
-
+    end
 
 
     it "user can create many decks" do
